@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
-import { Dialog } from "@/components/ui/dialog";
 import { CheckCircle, Rocket, Shield, Zap, Server, Globe, LayoutDashboard, Palette, Repeat, CreditCard, Plug, RefreshCcw, Bell, Users, DollarSign, Gift, BarChart2, Link2, UserPlus, ArrowDownCircle, XCircle, Timer, CalendarCheck2 } from "lucide-react";
 import { SupporterModal } from "@/components/SupporterModal";
+import { ContactModal } from "@/components/ContactModal";
+import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
@@ -201,6 +203,14 @@ const supporters = [
 ];
 
 const Index = () => {
+  const pricingRef = useRef<HTMLDivElement>(null);
+
+  const scrollToPricing = () => {
+    if (pricingRef.current) {
+      pricingRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#f8fafc] via-[#e0e7ff] to-[#f0fdfa] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0e172a] transition-colors duration-500">
       {/* Hero Section */}
@@ -223,12 +233,24 @@ const Index = () => {
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 text-center max-w-2xl font-medium">
             Want to run your own SMM panel? We make it ridiculously easy (and free). No tech headaches, no hidden fees—just your brand, your rules, your panel.
           </p>
-          <Button
-            size="lg"
-            className="px-10 py-6 text-lg font-semibold shadow-xl bg-gradient-to-r from-fuchsia-500 to-indigo-500 hover:from-indigo-500 hover:to-fuchsia-500 transition-colors duration-300 text-white"
-          >
-            Launch My Panel
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <Button
+              size="lg"
+              className="px-8 py-5 text-lg font-semibold shadow-xl bg-gradient-to-r from-fuchsia-500 to-indigo-500 hover:from-indigo-500 hover:to-fuchsia-500 transition-colors duration-300 text-white"
+              onClick={scrollToPricing}
+            >
+              See Pricing
+            </Button>
+            <Link to="/auth">
+              <Button
+                size="lg"
+                variant="outline"
+                className="px-8 py-5 text-lg font-semibold border-fuchsia-500 text-fuchsia-700 dark:text-fuchsia-300 hover:bg-fuchsia-50 dark:hover:bg-fuchsia-900/20 transition-colors duration-200"
+              >
+                Sign Up Free
+              </Button>
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -264,7 +286,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="w-full max-w-3xl mx-auto px-4 py-12">
+      <section ref={pricingRef} className="w-full max-w-3xl mx-auto px-4 py-12">
         <div className="relative rounded-2xl p-10 flex flex-col items-center bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl shadow-2xl border border-fuchsia-200 dark:border-fuchsia-800 overflow-hidden">
           {/* Glassmorphism gradient accent */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-fuchsia-400 to-indigo-400 opacity-30 blur-2xl rounded-full z-0" />
@@ -369,6 +391,32 @@ const Index = () => {
         </div>
         <div className="flex justify-center">
           <SupporterModal />
+        </div>
+      </section>
+
+      {/* Sleek CTA at Bottom */}
+      <section className="w-full bg-gradient-to-r from-fuchsia-500 to-indigo-500 py-12 px-4 flex flex-col items-center justify-center">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4 text-center drop-shadow-lg">
+          Ready to launch your SMM panel?
+        </h2>
+        <p className="text-lg text-white/90 mb-6 text-center max-w-xl">
+          Whether you have questions or want to get started, we're here to help. Reach out or sign up and join the SMMPanelScript family!
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <ContactModal
+            triggerLabel="Contact Us"
+            title="Contact Us"
+            description="Have a question or want to chat? Fill out the form and we'll get back to you!"
+            buttonClass="bg-white text-fuchsia-700 font-semibold border-0 shadow hover:bg-fuchsia-100"
+          />
+          <Link to="/auth">
+            <Button
+              size="lg"
+              className="bg-white text-fuchsia-700 font-semibold shadow hover:bg-fuchsia-100"
+            >
+              Sign Up Free
+            </Button>
+          </Link>
         </div>
       </section>
 
