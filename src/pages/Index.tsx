@@ -1,25 +1,134 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Rocket, Shield, Zap } from "lucide-react";
+import { CheckCircle, Rocket, Shield, Zap, Server, Globe, LayoutDashboard, Palette, Repeat, CreditCard, Plug, RefreshCcw, Bell, Users, DollarSign, Gift, BarChart2, Link2, UserPlus, FileText, ArrowDownCircle, XCircle, Timer } from "lucide-react";
 
 const features = [
   {
-    icon: <Rocket className="w-7 h-7 text-white" />,
-    title: "Lightning Fast",
-    description: "Our SMM panel script is optimized for speed and performance, ensuring your business runs smoothly.",
+    icon: <Zap className="w-7 h-7 text-white" />,
+    title: "Totally Free Script",
+    description: "Yep, you read that right. No hidden fees, no catch. Get your SMM panel up and running for free.",
     color: "from-fuchsia-500 to-indigo-500",
   },
   {
-    icon: <Shield className="w-7 h-7 text-white" />,
-    title: "Secure & Reliable",
-    description: "Built with security in mind, your data and your customers are always protected.",
+    icon: <Rocket className="w-7 h-7 text-white" />,
+    title: "Lightning Fast",
+    description: "Nobody likes waiting. Our script is built for speed, so your users never have to twiddle their thumbs.",
+    color: "from-yellow-400 to-orange-500",
+  },
+  {
+    icon: <Server className="w-7 h-7 text-white" />,
+    title: "Hosting Included",
+    description: "Don’t stress about servers. We handle the hosting, so you can focus on growing your panel.",
     color: "from-emerald-500 to-teal-400",
   },
   {
-    icon: <Zap className="w-7 h-7 text-white" />,
-    title: "Easy Customization",
-    description: "Easily tailor the panel to your brand with our flexible and intuitive interface.",
-    color: "from-yellow-400 to-orange-500",
+    icon: <Globe className="w-7 h-7 text-white" />,
+    title: "Custom Domain",
+    description: "Bring your own domain and make your panel truly yours. No weird subdomains here.",
+    color: "from-sky-500 to-blue-500",
+  },
+  {
+    icon: <LayoutDashboard className="w-7 h-7 text-white" />,
+    title: "Powerful Admin Dashboard",
+    description: "All your controls in one place. Manage orders, users, and more without breaking a sweat.",
+    color: "from-indigo-500 to-fuchsia-500",
+  },
+  {
+    icon: <Palette className="w-7 h-7 text-white" />,
+    title: "Theme Customizer",
+    description: "Make your panel match your vibe. Change colors, logos, and more in a snap.",
+    color: "from-pink-500 to-purple-500",
+  },
+  {
+    icon: <Repeat className="w-7 h-7 text-white" />,
+    title: "Automated Order Processing",
+    description: "Orders process themselves. You just sit back and watch the magic happen.",
+    color: "from-green-400 to-emerald-500",
+  },
+  {
+    icon: <CreditCard className="w-7 h-7 text-white" />,
+    title: "Multiple Payment Methods",
+    description: "Let your users pay however they want—cards, crypto, you name it.",
+    color: "from-orange-400 to-yellow-500",
+  },
+  {
+    icon: <Plug className="w-7 h-7 text-white" />,
+    title: "1-Click API Import",
+    description: "Add new API providers in seconds. No tech headaches required.",
+    color: "from-cyan-500 to-blue-400",
+  },
+];
+
+const detailFeatures = [
+  {
+    icon: <RefreshCcw className="w-6 h-6 text-fuchsia-500" />,
+    title: "Automated Status Updates",
+    description: "Keep your users in the loop with real-time order status via API.",
+  },
+  {
+    icon: <ArrowDownCircle className="w-6 h-6 text-indigo-500" />,
+    title: "Drip Feed",
+    description: "Deliver services gradually—perfect for natural growth.",
+  },
+  {
+    icon: <Repeat className="w-6 h-6 text-emerald-500" />,
+    title: "Refill",
+    description: "Easily refill orders with a click. No more manual juggling.",
+  },
+  {
+    icon: <XCircle className="w-6 h-6 text-red-500" />,
+    title: "Cancel Button",
+    description: "Let users cancel orders themselves (if you want).",
+  },
+  {
+    icon: <Timer className="w-6 h-6 text-yellow-500" />,
+    title: "Average Time",
+    description: "Show users how long orders usually take—set expectations, avoid headaches.",
+  },
+  {
+    icon: <Bell className="w-6 h-6 text-pink-500" />,
+    title: "Notifications",
+    description: "Get notified about what matters—orders, payments, and more.",
+  },
+  {
+    icon: <Plug className="w-6 h-6 text-blue-500" />,
+    title: "Integrations",
+    description: "Connect with your favorite tools and providers, hassle-free.",
+  },
+  {
+    icon: <LayoutDashboard className="w-6 h-6 text-purple-500" />,
+    title: "Child Panels",
+    description: "Let others resell your services with their own branded panels.",
+  },
+  {
+    icon: <UserPlus className="w-6 h-6 text-green-500" />,
+    title: "Affiliate Program",
+    description: "Reward users for spreading the word. Everyone wins.",
+  },
+  {
+    icon: <BarChart2 className="w-6 h-6 text-indigo-400" />,
+    title: "Reports",
+    description: "See what’s working (and what’s not) with clear, simple reports.",
+  },
+  {
+    icon: <Users className="w-6 h-6 text-fuchsia-400" />,
+    title: "User Management",
+    description: "Ban, unban, promote, demote—manage your community with ease.",
+  },
+  {
+    icon: <DollarSign className="w-6 h-6 text-amber-500" />,
+    title: "Custom Rates",
+    description: "Set your own prices for every service. Maximize your profits.",
+  },
+  {
+    icon: <Link2 className="w-6 h-6 text-cyan-500" />,
+    title: "API for Users",
+    description: "Let your users connect their own panels or tools via API.",
+  },
+  {
+    icon: <Gift className="w-6 h-6 text-pink-400" />,
+    title: "Bonuses & Discounts",
+    description: "Run promos, give bonuses, and keep your users coming back.",
   },
 ];
 
@@ -44,27 +153,27 @@ const Index = () => {
             smmpanelscript.org
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 text-center max-w-2xl font-medium">
-            The <span className="bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent font-bold">ultimate SMM panel script</span> for your business. Launch your own social media marketing panel with <span className="font-semibold text-indigo-600 dark:text-fuchsia-400">ease</span>, <span className="font-semibold text-fuchsia-600 dark:text-indigo-400">speed</span>, and <span className="font-semibold text-emerald-600 dark:text-emerald-400">security</span>.
+            Want to run your own SMM panel? We make it ridiculously easy (and free). No tech headaches, no hidden fees—just your brand, your rules, your panel.
           </p>
           <Button
             size="lg"
             className="px-10 py-6 text-lg font-semibold shadow-xl bg-gradient-to-r from-fuchsia-500 to-indigo-500 hover:from-indigo-500 hover:to-fuchsia-500 transition-colors duration-300 text-white"
           >
-            Get Started
+            Launch My Panel
           </Button>
         </div>
       </header>
 
       {/* Features Section */}
-      <section className="flex-1 w-full max-w-6xl mx-auto px-4 py-16">
+      <section className="w-full max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight bg-gradient-to-r from-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">
-          Why Choose smmpanelscript.org?
+          Everything You Need (And Then Some)
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {features.map((feature) => (
             <Card
               key={feature.title}
-              className="relative group bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border-0 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300"
+              className="relative group bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg border-0 shadow-xl hover:scale-[1.03] hover:shadow-2xl transition-all duration-300"
             >
               <CardContent className="flex flex-col items-center py-10 px-4">
                 <div
@@ -86,28 +195,47 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Pricing Teaser */}
+      {/* Pricing Section */}
       <section className="w-full max-w-3xl mx-auto px-4 py-12">
         <div className="relative rounded-2xl p-10 flex flex-col items-center bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl shadow-2xl border border-fuchsia-200 dark:border-fuchsia-800 overflow-hidden">
           {/* Glassmorphism gradient accent */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-fuchsia-400 to-indigo-400 opacity-30 blur-2xl rounded-full z-0" />
           <div className="relative z-10 flex flex-col items-center">
             <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
-              Simple, Transparent Pricing
+              Pricing That Makes Sense
             </h3>
             <p className="text-gray-700 dark:text-gray-200 mb-5 text-center text-lg font-medium">
-              Get started for as low as{" "}
-              <span className="font-extrabold text-3xl text-fuchsia-600 dark:text-fuchsia-400 drop-shadow-lg">$49</span>
-              . No hidden fees, no surprises.
+              <span className="font-extrabold text-fuchsia-600 dark:text-fuchsia-400">$0</span> up to your first <span className="font-bold">5,000 USD</span> in revenue.<br />
+              After that, just <span className="font-bold">2%</span> up to $10k, and <span className="font-bold">1%</span> after $10k.<br />
+              No subscriptions, no nonsense. You grow, we grow.
             </p>
             <Button
               variant="outline"
               size="lg"
               className="border-2 border-fuchsia-500 text-fuchsia-700 dark:text-fuchsia-300 font-semibold hover:bg-fuchsia-50 dark:hover:bg-fuchsia-900/20 transition-colors duration-200"
             >
-              View Pricing
+              See Full Pricing
             </Button>
           </div>
+        </div>
+      </section>
+
+      {/* In-Detail Features Section */}
+      <section className="w-full max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
+          Dive Into The Details
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {detailFeatures.map((feature) => (
+            <div
+              key={feature.title}
+              className="flex flex-col items-center bg-white/80 dark:bg-slate-900/80 rounded-2xl shadow-lg p-8 hover:scale-[1.02] transition-transform duration-200"
+            >
+              <div className="mb-4">{feature.icon}</div>
+              <h4 className="text-lg font-semibold mb-1 text-center">{feature.title}</h4>
+              <p className="text-gray-600 dark:text-gray-300 text-center text-base">{feature.description}</p>
+            </div>
+          ))}
         </div>
       </section>
 
