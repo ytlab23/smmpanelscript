@@ -1,7 +1,12 @@
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Terms = () => (
   <div className="max-w-2xl mx-auto py-16 px-4">
+    <Helmet>
+      <title>Terms of Service | Free SMM Panel Script</title>
+      <meta name="description" content="Read the simple terms of service for using SMMPanelScript.org, the free SMM panel script and hosting platform." />
+    </Helmet>
     <h1 className="text-3xl font-bold mb-6 text-fuchsia-700">Terms of Service</h1>
     <p className="mb-4">
       Welcome to SMMPanelScript.org! By using our free SMM panel script and platform, you agree to the following simple terms:
