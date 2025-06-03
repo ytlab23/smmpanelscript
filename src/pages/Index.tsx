@@ -1,6 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { CheckCircle, Rocket, Shield, Zap, Server, Globe, LayoutDashboard, Palette, Repeat, CreditCard, Plug, RefreshCcw, Bell, Users, DollarSign, Gift, BarChart2, Link2, UserPlus, FileText, ArrowDownCircle, XCircle, Timer } from "lucide-react";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Dialog } from "@/components/ui/dialog";
+import { CheckCircle, Rocket, Shield, Zap, Server, Globe, LayoutDashboard, Palette, Repeat, CreditCard, Plug, RefreshCcw, Bell, Users, DollarSign, Gift, BarChart2, Link2, UserPlus, ArrowDownCircle, XCircle, Timer, CalendarCheck2 } from "lucide-react";
+import { SupporterModal } from "@/components/SupporterModal";
 
 const features = [
   {
@@ -71,6 +74,11 @@ const detailFeatures = [
     description: "Deliver services gradually—perfect for natural growth.",
   },
   {
+    icon: <CalendarCheck2 className="w-6 h-6 text-emerald-500" />,
+    title: "Subscriptions",
+    description: "Set it and forget it! Users can subscribe to get services automatically whenever they post something new.",
+  },
+  {
     icon: <Repeat className="w-6 h-6 text-emerald-500" />,
     title: "Refill",
     description: "Easily refill orders with a click. No more manual juggling.",
@@ -129,6 +137,66 @@ const detailFeatures = [
     icon: <Gift className="w-6 h-6 text-pink-400" />,
     title: "Bonuses & Discounts",
     description: "Run promos, give bonuses, and keep your users coming back.",
+  },
+];
+
+const faqs = [
+  {
+    q: "Is it really free?",
+    a: "Absolutely! You can use SMMPanelScript for free until you hit $5,000 in revenue. After that, we just take a tiny cut to keep the lights on.",
+  },
+  {
+    q: "Do I need to know how to code?",
+    a: "Nope! If you can click a mouse and type, you can run your own SMM panel with us. No tech wizardry required.",
+  },
+  {
+    q: "Can I use my own domain?",
+    a: "Of course! Your brand, your rules. Bring your own domain and make your panel truly yours.",
+  },
+  {
+    q: "What happens if I go over $5,000 in revenue?",
+    a: "Congrats! We’ll only take 2% up to $10k, and just 1% after that. No sneaky fees, ever.",
+  },
+  {
+    q: "How do I get paid?",
+    a: "You choose how you want to get paid—cards, crypto, whatever works for you. We don’t touch your money.",
+  },
+  {
+    q: "Can I import API providers?",
+    a: "Yes! Add new API providers with just one click. No headaches, no complicated setup.",
+  },
+  {
+    q: "Is hosting really included?",
+    a: "Yep. We handle the servers so you can focus on growing your business, not fighting with cPanel.",
+  },
+  {
+    q: "What if I need help?",
+    a: "We’re here for you! Reach out anytime and we’ll get you sorted. No robots, just real people.",
+  },
+  {
+    q: "Can I customize the look of my panel?",
+    a: "Totally! Change colors, logos, and more to match your vibe. Make it yours.",
+  },
+];
+
+const supporters = [
+  {
+    name: "SMMPanelScript",
+    url: "https://smmpanelscript.org",
+    desc: "The project that keeps it all running.",
+    logo: null,
+  },
+  {
+    name: "TheYTLab",
+    url: "https://theytlab.com",
+    desc: "YouTube SMM provider, trusted by thousands.",
+    logo: null,
+  },
+  {
+    name: "SMMStone",
+    url: "https://smmstone.com",
+    desc: "Telegram SMM provider, rock solid.",
+    logo: null,
   },
 ];
 
@@ -200,21 +268,41 @@ const Index = () => {
         <div className="relative rounded-2xl p-10 flex flex-col items-center bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl shadow-2xl border border-fuchsia-200 dark:border-fuchsia-800 overflow-hidden">
           {/* Glassmorphism gradient accent */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-fuchsia-400 to-indigo-400 opacity-30 blur-2xl rounded-full z-0" />
-          <div className="relative z-10 flex flex-col items-center">
+          <div className="relative z-10 flex flex-col items-center w-full">
             <h3 className="text-2xl font-bold mb-2 bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
               Pricing That Makes Sense
             </h3>
             <p className="text-gray-700 dark:text-gray-200 mb-5 text-center text-lg font-medium">
-              <span className="font-extrabold text-fuchsia-600 dark:text-fuchsia-400">$0</span> up to your first <span className="font-bold">5,000 USD</span> in revenue.<br />
-              After that, just <span className="font-bold">2%</span> up to $10k, and <span className="font-bold">1%</span> after $10k.<br />
               No subscriptions, no nonsense. You grow, we grow.
             </p>
+            <Table className="mb-4 w-full max-w-lg mx-auto border rounded-lg overflow-hidden">
+              <TableHeader>
+                <TableRow>
+                  <TableHead className="text-center">Revenue</TableHead>
+                  <TableHead className="text-center">You Pay</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-center font-semibold">$0 – $5,000</TableCell>
+                  <TableCell className="text-center font-bold text-emerald-600">Free</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-center font-semibold">$5,000 – $10,000</TableCell>
+                  <TableCell className="text-center font-bold text-fuchsia-600">2%</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-center font-semibold">$10,000+</TableCell>
+                  <TableCell className="text-center font-bold text-indigo-600">1%</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
             <Button
               variant="outline"
               size="lg"
               className="border-2 border-fuchsia-500 text-fuchsia-700 dark:text-fuchsia-300 font-semibold hover:bg-fuchsia-50 dark:hover:bg-fuchsia-900/20 transition-colors duration-200"
             >
-              See Full Pricing
+              See Full Pricing Details
             </Button>
           </div>
         </div>
@@ -236,6 +324,51 @@ const Index = () => {
               <p className="text-gray-600 dark:text-gray-300 text-center text-base">{feature.description}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="w-full max-w-4xl mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 tracking-tight bg-gradient-to-r from-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-6">
+          {faqs.map((faq, i) => (
+            <div key={i} className="bg-white/80 dark:bg-slate-900/80 rounded-xl shadow p-6">
+              <div className="flex items-start gap-3">
+                <span className="font-bold text-fuchsia-600 dark:text-fuchsia-400">Q:</span>
+                <span className="font-semibold">{faq.q}</span>
+              </div>
+              <div className="flex items-start gap-3 mt-2">
+                <span className="font-bold text-indigo-600 dark:text-indigo-400">A:</span>
+                <span>{faq.a}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Supporters Section */}
+      <section className="w-full max-w-4xl mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8 tracking-tight bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
+          Supported By
+        </h2>
+        <div className="flex flex-wrap justify-center gap-8 mb-8">
+          {supporters.map((s) => (
+            <a
+              key={s.name}
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center bg-white/80 dark:bg-slate-900/80 rounded-xl shadow p-6 hover:scale-105 transition-transform duration-200 min-w-[180px]"
+            >
+              <div className="mb-2 text-lg font-bold text-fuchsia-600 dark:text-fuchsia-400">{s.name}</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300 text-center">{s.desc}</div>
+            </a>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <SupporterModal />
         </div>
       </section>
 
