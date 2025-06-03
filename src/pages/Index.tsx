@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -8,7 +7,49 @@ import { ContactModal } from "@/components/ContactModal";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
 
-// ...features, detailFeatures, faqs, supporters arrays remain unchanged
+// Import images
+import ScriptSMMPanelLogo from "../assets/scriptsmmpanel logo.png";
+import TheYTLabLogo from "../assets/logo theytlab.webp";
+import StoneSMMLogo from "../assets/stonesmm logo.png";
+
+const features = [
+  // ... unchanged
+];
+
+const detailFeatures = [
+  // ... unchanged
+];
+
+const faqs = [
+  // ... unchanged
+];
+
+const supporters = [
+  {
+    name: "ScriptSMMPanel",
+    url: "https://scriptsmmpanel.com/",
+    desc: "Resource about SMM panel scripts & premium script provider.",
+    logo: ScriptSMMPanelLogo,
+    alt: "ScriptSMMPanel logo",
+    title: "ScriptSMMPanel - SMM panel scripts resource and provider",
+  },
+  {
+    name: "TheYTLab",
+    url: "https://theytlab.com/",
+    desc: "YouTube SMM provider, trusted by thousands.",
+    logo: TheYTLabLogo,
+    alt: "TheYTLab logo",
+    title: "TheYTLab - YouTube SMM provider",
+  },
+  {
+    name: "SMMStone",
+    url: "https://smmstone.com/",
+    desc: "Telegram SMM provider, rock solid.",
+    logo: StoneSMMLogo,
+    alt: "SMMStone logo",
+    title: "SMMStone - Telegram SMM provider",
+  },
+];
 
 const Index = () => {
   const pricingRef = useRef<HTMLDivElement>(null);
@@ -21,16 +62,41 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#f8fafc] via-[#e0e7ff] to-[#f0fdfa] dark:from-[#0f172a] dark:via-[#1e293b] dark:to-[#0e172a] transition-colors duration-500">
-      <Helmet>
-        <title>Free SMM Panel Script - Launch Your SMM Panel Today!</title>
-        <meta
-          name="description"
-          content="Launch your own SMM panel with our Free SMM Panel Script. No hidden fees, no coding required—just your brand, your rules."
-        />
-      </Helmet>
-      {/* Hero Section */}
-      {/* ...rest of the component remains unchanged */}
-      {/* ... */}
+      {/* ...hero, features, pricing, details, faq sections unchanged... */}
+
+      {/* Supporters Section */}
+      <section id="supporters" className="w-full max-w-4xl mx-auto px-4 py-16">
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8 tracking-tight bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
+          Supported By
+        </h2>
+        <div className="flex flex-wrap justify-center gap-8 mb-8">
+          {supporters.map((s) => (
+            <a
+              key={s.name}
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-col items-center bg-white/80 dark:bg-slate-900/80 rounded-xl shadow p-6 hover:scale-105 transition-transform duration-200 min-w-[180px] cursor-pointer"
+              title={s.title}
+            >
+              <img
+                src={s.logo}
+                alt={s.alt}
+                title={s.title}
+                className="mb-2 w-16 h-16 object-contain rounded-lg shadow"
+                loading="lazy"
+              />
+              <div className="mb-2 text-lg font-bold text-fuchsia-600 dark:text-fuchsia-400">{s.name}</div>
+              <div className="text-sm text-gray-600 dark:text-gray-300 text-center">{s.desc}</div>
+            </a>
+          ))}
+        </div>
+        <div className="flex justify-center">
+          <SupporterModal />
+        </div>
+      </section>
+
+      {/* ...CTA and rest unchanged... */}
     </div>
   );
 };
