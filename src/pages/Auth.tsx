@@ -3,6 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Meta } from "@/components/Meta";
 
 const Auth = () => {
   // For demo, just local state for form fields
@@ -12,6 +13,10 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
+      <Meta
+        title="Sign Up or Log In - Free SMM Panel Script"
+        description="Create your free SMM panel account or log in to SMMPanelScript. Fast, easy, and no coding required."
+      />
       <div className="w-full max-w-md bg-white/90 dark:bg-slate-900/90 rounded-2xl shadow-2xl p-8">
         <h1 className="text-3xl font-extrabold text-center mb-8 bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
           Welcome to smmpanelscript.org
