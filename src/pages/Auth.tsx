@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -13,13 +12,6 @@ const Auth = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
-      <Helmet>
-        <title>Login or Create an Account | Free SMM Panel</title>
-        <meta
-          name="description"
-          content="Login or create an account to access your Free SMM Panel Script. Start your SMM panel journey today with our free platform."
-        />
-      </Helmet>
       <div className="w-full max-w-md bg-white/90 dark:bg-slate-900/90 rounded-2xl shadow-2xl p-8">
         <h1 className="text-3xl font-extrabold text-center mb-8 bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
           Welcome to smmpanelscript.org
