@@ -30,7 +30,7 @@ const Terms = () => (
       </li>
     </ul>
     <p className="mb-4">
-      By using SMMPanelScript.org, you agree to these terms. If you have questions, please <Link to="/" className="text-fuchsia-600 underline">contact us</Link>.
+      By using SMMPanelScript.org, you agree to these terms. If you have questions, please <a href="mailto:contact@smmpanelscript.org" className="text-fuchsia-600 underline">contact us</a>.
     </p>
     <p className="text-xs text-gray-500">Last updated: July 2024</p>
   </div>

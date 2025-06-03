@@ -183,22 +183,28 @@ const faqs = [
 
 const supporters = [
   {
-    name: "SMMPanelScript",
-    url: "https://smmpanelscript.org",
-    desc: "The project that keeps it all running.",
-    logo: null,
+    name: "ScriptSMMPanel",
+    url: "https://scriptsmmpanel.com/",
+    desc: "Resource about SMM panel scripts & premium script provider.",
+    logo: "/scriptsmmpanel logo.png",
+    alt: "ScriptSMMPanel logo - premium SMM panel script provider",
+    title: "ScriptSMMPanel Logo",
   },
   {
     name: "TheYTLab",
-    url: "https://theytlab.com",
+    url: "https://theytlab.com/",
     desc: "YouTube SMM provider, trusted by thousands.",
-    logo: null,
+    logo: "/logo theytlab.webp",
+    alt: "TheYTLab logo - YouTube SMM provider",
+    title: "TheYTLab Logo",
   },
   {
     name: "SMMStone",
-    url: "https://smmstone.com",
+    url: "https://smmstone.com/",
     desc: "Telegram SMM provider, rock solid.",
-    logo: null,
+    logo: "/stonesmm logo.png",
+    alt: "SMMStone logo - Telegram SMM provider",
+    title: "SMMStone Logo",
   },
 ];
 
@@ -382,8 +388,16 @@ const Index = () => {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center bg-white/80 dark:bg-slate-900/80 rounded-xl shadow p-6 hover:scale-105 transition-transform duration-200 min-w-[180px]"
+              className="flex flex-col items-center bg-white/80 dark:bg-slate-900/80 rounded-xl shadow p-6 hover:scale-105 transition-transform duration-200 min-w-[180px] cursor-pointer"
+              title={s.title}
             >
+              <img
+                src={s.logo}
+                alt={s.alt}
+                title={s.title}
+                className="mb-2 w-24 h-16 object-contain"
+                loading="lazy"
+              />
               <div className="mb-2 text-lg font-bold text-fuchsia-600 dark:text-fuchsia-400">{s.name}</div>
               <div className="text-sm text-gray-600 dark:text-gray-300 text-center">{s.desc}</div>
             </a>
