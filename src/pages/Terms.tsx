@@ -1,11 +1,7 @@
-import { Meta } from "@/components/Meta";
+import { Link } from "react-router-dom";
 
 const Terms = () => (
   <div className="max-w-2xl mx-auto py-16 px-4">
-    <Meta
-      title="Terms of Service - Free SMM Panel Script"
-      description="Read the terms of service for SMMPanelScript.org, the free SMM panel script and hosting platform."
-    />
     <h1 className="text-3xl font-bold mb-6 text-fuchsia-700">Terms of Service</h1>
     <p className="mb-4">
       Welcome to SMMPanelScript.org! By using our free SMM panel script and platform, you agree to the following simple terms:
