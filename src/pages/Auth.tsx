@@ -1,10 +1,24 @@
+import { useEffect, useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Auth = () => {
+  useEffect(() => {
+    document.title = "Login or Create an Account | Free SMM Panel";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    const descContent = "Login or create your account with Free SMM Panel Script. Start your own SMM panel for free and manage your services easily.";
+    if (metaDesc) {
+      metaDesc.setAttribute("content", descContent);
+    } else {
+      const meta = document.createElement("meta");
+      meta.name = "description";
+      meta.content = descContent;
+      document.head.appendChild(meta);
+    }
+  }, []);
+
   // For demo, just local state for form fields
   const [signup, setSignup] = useState({ email: "", password: "", confirm: "" });
   const [login, setLogin] = useState({ email: "", password: "" });
