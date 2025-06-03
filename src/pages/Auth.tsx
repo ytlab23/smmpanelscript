@@ -2,11 +2,13 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Auth = () => {
   // For demo, just local state for form fields
   const [signup, setSignup] = useState({ email: "", password: "", confirm: "" });
   const [login, setLogin] = useState({ email: "", password: "" });
+  const [agreed, setAgreed] = useState(false);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-fuchsia-50 via-indigo-50 to-white dark:from-slate-900 dark:via-slate-800 dark:to-slate-900">
@@ -42,7 +44,27 @@ const Auth = () => {
                 value={signup.confirm}
                 onChange={e => setSignup(s => ({ ...s, confirm: e.target.value }))}
               />
-              <Button type="submit" className="w-full bg-gradient-to-r from-fuchsia-500 to-indigo-500 text-white font-semibold">
+              <div className="flex items-center gap-2">
+                <input
+                  id="agree"
+                  type="checkbox"
+                  checked={agreed}
+                  onChange={e => setAgreed(e.target.checked)}
+                  className="accent-fuchsia-500 w-4 h-4"
+                  required
+                />
+                <label htmlFor="agree" className="text-sm">
+                  I agree to the{" "}
+                  <Link to="/terms" className="text-fuchsia-600 underline" target="_blank" rel="noopener noreferrer">
+                    Terms of Service
+                  </Link>
+                </label>
+              </div>
+              <Button
+                type="submit"
+                className="w-full bg-gradient-to-r from-fuchsia-500 to-indigo-500 text-white font-semibold"
+                disabled={!agreed}
+              >
                 Sign Up
               </Button>
             </form>

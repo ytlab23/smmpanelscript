@@ -35,6 +35,9 @@ export function Footer() {
               {link.label}
             </a>
           ))}
+          <Link to="/terms" className="text-sm text-gray-600 dark:text-gray-300 hover:text-fuchsia-600 dark:hover:text-fuchsia-400 transition-colors">
+            Terms
+          </Link>
         </nav>
         <Link to="/auth">
           <Button
