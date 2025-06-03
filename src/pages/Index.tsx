@@ -142,31 +142,63 @@ const detailFeatures = [
   },
 ];
 
-// Supporter logos in public/
+const faqs = [
+  {
+    q: "Is it really free?",
+    a: "Absolutely! You can use SMMPanelScript for free until you hit $5,000 in revenue. After that, we just take a tiny cut to keep the lights on.",
+  },
+  {
+    q: "Do I need to know how to code?",
+    a: "Nope! If you can click a mouse and type, you can run your own SMM panel with us. No tech wizardry required.",
+  },
+  {
+    q: "Can I use my own domain?",
+    a: "Of course! Your brand, your rules. Bring your own domain and make your panel truly yours.",
+  },
+  {
+    q: "What happens if I go over $5,000 in revenue?",
+    a: "Congrats! We’ll only take 2% up to $10k, and just 1% after that. No sneaky fees, ever.",
+  },
+  {
+    q: "How do I get paid?",
+    a: "You choose how you want to get paid—cards, crypto, whatever works for you. We don’t touch your money.",
+  },
+  {
+    q: "Can I import API providers?",
+    a: "Yes! Add new API providers with just one click. No headaches, no complicated setup.",
+  },
+  {
+    q: "Is hosting really included?",
+    a: "Yep. We handle the servers so you can focus on growing your business, not fighting with cPanel.",
+  },
+  {
+    q: "What if I need help?",
+    a: "We’re here for you! Reach out anytime and we’ll get you sorted. No robots, just real people.",
+  },
+  {
+    q: "Can I customize the look of my panel?",
+    a: "Totally! Change colors, logos, and more to match your vibe. Make it yours.",
+  },
+];
+
 const supporters = [
   {
-    name: "ScriptSMMPanel",
-    url: "https://scriptsmmpanel.com/",
-    desc: "Resource about SMM panel scripts & premium script provider.",
-    logo: "/scriptsmmpanel logo.png",
-    alt: "ScriptSMMPanel logo - premium SMM panel script provider",
-    title: "ScriptSMMPanel Logo",
+    name: "SMMPanelScript",
+    url: "https://smmpanelscript.org",
+    desc: "The project that keeps it all running.",
+    logo: null,
   },
   {
     name: "TheYTLab",
-    url: "https://theytlab.com/",
+    url: "https://theytlab.com",
     desc: "YouTube SMM provider, trusted by thousands.",
-    logo: "/logo theytlab.webp",
-    alt: "TheYTLab logo - YouTube SMM provider",
-    title: "TheYTLab Logo",
+    logo: null,
   },
   {
     name: "SMMStone",
-    url: "https://smmstone.com/",
+    url: "https://smmstone.com",
     desc: "Telegram SMM provider, rock solid.",
-    logo: "/stonesmm logo.png",
-    alt: "SMMStone logo - Telegram SMM provider",
-    title: "SMMStone Logo",
+    logo: null,
   },
 ];
 
@@ -350,16 +382,8 @@ const Index = () => {
               href={s.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex flex-col items-center bg-white/80 dark:bg-slate-900/80 rounded-xl shadow p-6 hover:scale-105 transition-transform duration-200 min-w-[180px] cursor-pointer"
-              title={s.title}
+              className="flex flex-col items-center bg-white/80 dark:bg-slate-900/80 rounded-xl shadow p-6 hover:scale-105 transition-transform duration-200 min-w-[180px]"
             >
-              <img
-                src={s.logo}
-                alt={s.alt}
-                title={s.title}
-                className="mb-2 w-16 h-16 object-contain"
-                loading="lazy"
-              />
               <div className="mb-2 text-lg font-bold text-fuchsia-600 dark:text-fuchsia-400">{s.name}</div>
               <div className="text-sm text-gray-600 dark:text-gray-300 text-center">{s.desc}</div>
             </a>
