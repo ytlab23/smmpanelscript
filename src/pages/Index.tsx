@@ -225,10 +225,10 @@ const Index = () => {
         <div className="relative z-10 flex flex-col items-center">
           {/* Logo */}
           <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center shadow-2xl mb-6 border-4 border-white dark:border-slate-900">
-            <span className="text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">SP</span>
+            <span className="text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">SPS</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 text-center tracking-tight drop-shadow-lg">
-            smmpanelscript.org
+            Free SMM Panel Script
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 text-center max-w-2xl font-medium">
             Want to run your own SMM panel? We make it ridiculously easy (and free). No tech headaches, no hidden fees—just your brand, your rules, your panel.
@@ -255,7 +255,7 @@ const Index = () => {
       </header>
 
       {/* Features Section */}
-      <section className="w-full max-w-6xl mx-auto px-4 py-16">
+      <section id="features" className="w-full max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight bg-gradient-to-r from-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">
           Everything You Need (And Then Some)
         </h2>
@@ -286,7 +286,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section ref={pricingRef} className="w-full max-w-3xl mx-auto px-4 py-12">
+      <section id="pricing" ref={pricingRef} className="w-full max-w-3xl mx-auto px-4 py-12">
         <div className="relative rounded-2xl p-10 flex flex-col items-center bg-white/60 dark:bg-slate-900/60 backdrop-blur-xl shadow-2xl border border-fuchsia-200 dark:border-fuchsia-800 overflow-hidden">
           {/* Glassmorphism gradient accent */}
           <div className="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-fuchsia-400 to-indigo-400 opacity-30 blur-2xl rounded-full z-0" />
@@ -331,7 +331,7 @@ const Index = () => {
       </section>
 
       {/* In-Detail Features Section */}
-      <section className="w-full max-w-6xl mx-auto px-4 py-16">
+      <section id="details" className="w-full max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
           Dive Into The Details
         </h2>
@@ -350,7 +350,7 @@ const Index = () => {
       </section>
 
       {/* FAQ Section */}
-      <section className="w-full max-w-4xl mx-auto px-4 py-16">
+      <section id="faq" className="w-full max-w-4xl mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 tracking-tight bg-gradient-to-r from-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">
           Frequently Asked Questions
         </h2>
@@ -371,7 +371,7 @@ const Index = () => {
       </section>
 
       {/* Supporters Section */}
-      <section className="w-full max-w-4xl mx-auto px-4 py-16">
+      <section id="supporters" className="w-full max-w-4xl mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-8 tracking-tight bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent">
           Supported By
         </h2>
@@ -419,21 +419,6 @@ const Index = () => {
           </Link>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="mt-auto">
-        <div className="border-t-2 border-gradient-to-r from-fuchsia-400 to-indigo-400 dark:from-fuchsia-700 dark:to-indigo-700 py-8 flex flex-col items-center bg-gradient-to-r from-white/80 to-slate-100/80 dark:from-slate-900/80 dark:to-slate-800/80">
-          <div className="flex items-center gap-2 mb-2">
-            <CheckCircle className="w-5 h-5 text-emerald-500" />
-            <span className="text-base text-gray-700 dark:text-gray-300 font-medium">
-              Trusted by SMM businesses worldwide
-            </span>
-          </div>
-          <span className="text-xs text-gray-400 mb-2">
-            &copy; {new Date().getFullYear()} smmpanelscript.org. All rights reserved.
-          </span>
-        </div>
-      </footer>
     </div>
   );
 };
