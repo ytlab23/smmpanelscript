@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { CheckCircle, Rocket, Shield, Zap } from "lucide-react";
-import { MadeWithDyad } from "@/components/made-with-dyad";
 
 const features = [
   {
@@ -39,10 +38,10 @@ const Index = () => {
         <div className="relative z-10 flex flex-col items-center">
           {/* Logo */}
           <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-indigo-500 to-fuchsia-500 flex items-center justify-center shadow-2xl mb-6 border-4 border-white dark:border-slate-900">
-            <span className="text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">SM</span>
+            <span className="text-3xl font-extrabold text-white tracking-tight drop-shadow-lg">SP</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white mb-4 text-center tracking-tight drop-shadow-lg">
-            SMMScript.io
+            smmpanelscript.org
           </h1>
           <p className="text-xl md:text-2xl text-gray-700 dark:text-gray-300 mb-8 text-center max-w-2xl font-medium">
             The <span className="bg-gradient-to-r from-fuchsia-500 to-indigo-500 bg-clip-text text-transparent font-bold">ultimate SMM panel script</span> for your business. Launch your own social media marketing panel with <span className="font-semibold text-indigo-600 dark:text-fuchsia-400">ease</span>, <span className="font-semibold text-fuchsia-600 dark:text-indigo-400">speed</span>, and <span className="font-semibold text-emerald-600 dark:text-emerald-400">security</span>.
@@ -59,7 +58,7 @@ const Index = () => {
       {/* Features Section */}
       <section className="flex-1 w-full max-w-6xl mx-auto px-4 py-16">
         <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-12 tracking-tight bg-gradient-to-r from-indigo-500 to-fuchsia-500 bg-clip-text text-transparent">
-          Why Choose SMMScript.io?
+          Why Choose smmpanelscript.org?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {features.map((feature) => (
@@ -122,9 +121,8 @@ const Index = () => {
             </span>
           </div>
           <span className="text-xs text-gray-400 mb-2">
-            &copy; {new Date().getFullYear()} SMMScript.io. All rights reserved.
+            &copy; {new Date().getFullYear()} smmpanelscript.org. All rights reserved.
           </span>
-          <MadeWithDyad />
         </div>
       </footer>
     </div>
